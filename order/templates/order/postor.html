@@ -1,0 +1,35 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Title</title>#}
+{#</head>#}
+{% extends 'temp/user.html' %}
+{% block base %}
+<body>
+<form method="post">
+    {% csrf_token %}
+
+<table align="center">
+    <tr>
+        <td>quantity</td>
+        <td><input type="text" name="qty"></td>
+    </tr>
+     <tr>
+        <td>Delivery address</td>
+        <td><input type="text" name="adrs"></td>
+    </tr>
+     <tr>
+        <td>phone</td>
+        <td><input type="text" name="ph"></td>
+    </tr>
+      <tr>
+        <td></td>
+        <td><input type="submit" name="btn" value="Post"></td>
+          <td><a href="/payment/pay/">Pay</a> </td>
+    </tr>
+</table>
+    </form>
+</body>
+</html>
+{% endblock %}

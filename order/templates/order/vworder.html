@@ -1,0 +1,33 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Title</title>#}
+{#</head>#}
+{% extends 'temp/user.html' %}
+{% block base %}
+<body>
+<table align="center" border="2" width="50%">
+    <tr class="btn-primary" height="50px">
+        <th>USER</th>
+        <th>PRODUCT</th>
+        <th>IMAGE</th>
+        <th>QUANTITY</th>
+        <th>STATUS</th>
+
+    </tr>
+    {% for i in objval %}
+    <tr>
+        <td>{{ i.user.username }}</td>
+        <td>{{ i.p.name }}</td>
+        <td><img src="/static/{{ i.p.image }}" height="300" width="300"> </td>
+        <td>{{ i.quantity }}</td>
+    <td>{{ i.status }}</td>
+    <td><a href="{% url 'rmm' idd=i.o_id %}">remove</a> </td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
+{% endblock %}

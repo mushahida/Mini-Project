@@ -1,0 +1,54 @@
+
+{% extends 'temp/user.html' %}
+{% block base %}
+{#  <div class="container-fluid bg-registration py-5" style="margin: 90px 0;">#}
+    <center>
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-7 mb-5 mb-lg-0">
+
+
+                </div>
+                <div class="col-lg-5">
+                    <div class="card border-0">
+                        <div class="card-header bg-primary text-center p-4">
+                            <h1 class="text-white m-0">PAY</h1>
+                        </div>
+                        <div class="card-body rounded-bottom bg-white p-5">
+                           <form method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+{#                              csrf_token <div class="form-group">#}
+{#                                    <select name="pp"   required="required" >#}
+{#                                    <option value="" class="form-control p-4">SELECT</option>#}
+{#                                        {% for i in objval %}#}
+{#                                        <option value="{{ i.ct_id }}">{{ i.category_name }}</option>#}
+{#                                        {% endfor %}#}
+{#                                    </select>#}
+{#                                </div>#}
+                                <div class="form-group">
+                                    <input type="text" class="form-control p-4" placeholder="amount" required="required"  name="amn"/>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control p-4" placeholder="Delivery charge" required="required" name="del" />
+                                </div>
+                                 <div class="form-group">
+                                    <input type="text" class="form-control p-4" placeholder="Total Amount" required="required" name="tt" />
+                                </div>
+
+{#                                 <div class="form-group">#}
+{#                                    <input type="file" class="form-control p-4" placeholder="SIZE CHART" required="required" name="chart" />#}
+{#                                </div>#}
+
+                                <div>
+                                    <button class="btn btn-primary btn-block py-3" type="submit">Pay</button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</center>
+{% endblock %}

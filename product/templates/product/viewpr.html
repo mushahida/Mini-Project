@@ -1,0 +1,32 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Title</title>#}
+{#</head>#}
+{% extends 'temp/user.html' %}
+{% block base %}
+<body>
+<table border="2" align="center">
+    <tr>
+        <th>PRODUCT</th>
+        <th>DESCRIPTION</th>
+        <th>IMAGE</th>
+        <th>PRIZE</th>
+        <th>SIZE CHART</th>
+
+    </tr>
+    {% for i in objval %}
+    <tr>
+        <td>{{ i.name }}</td>
+        <td>{{ i.discription }}</td>
+        <td>{{ i.image }}</td>
+        <td>{{ i.prize }}</td>
+        <td>{{ i.size_chart }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,102 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Title</title>#}
+{#</head>#}
+{#{% extends 'temp/admin.html' %}#}
+{#{% block base %}#}
+{#<body>#}
+{#<form method="post" enctype="multipart/form-data">#}
+{#    {% csrf_token %}#}
+{##}
+{#<table align="center">#}
+{#    <tr>#}
+{#        <td>PRODUCT</td>#}
+{#        <td><input type="text" name="product"></td>#}
+{#    </tr>#}
+{#     <tr>#}
+{#        <td>DESCRIPTION</td>#}
+{#        <td><input type="text" name="des"></td>#}
+{#    </tr>#}
+{#     <tr>#}
+{#        <td>IMAGE</td>#}
+{#        <td><input type="file" name="img"></td>#}
+{#    </tr>#}
+{#     <tr>#}
+{#        <td>PRIZE</td>#}
+{#        <td><input type="text" name="pr"></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#        <td>SIZE CHART</td>#}
+{#        <td><input type="file" name="chart"></td>#}
+{#    </tr>#}
+{#     <tr>#}
+{#        <td></td>#}
+{#        <td><input type="submit" name="btn" value="Add"></td>#}
+{#    </tr>#}
+{#</table>#}
+{#</form>#}
+{#</body>#}
+{#</html>#}
+{#{% endblock %}#}
+
+
+
+{% extends 'temp/admin.html' %}
+{% block base %}
+{#  <div class="container-fluid bg-registration py-5" style="margin: 90px 0;">#}
+    <center>
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-7 mb-5 mb-lg-0">
+
+
+                </div>
+                <div class="col-lg-5">
+                    <div class="card border-0">
+                        <div class="card-header bg-primary text-center p-4">
+                            <h1 class="text-white m-0">ADD PRODUCTS</h1>
+                        </div>
+                        <div class="card-body rounded-bottom bg-white p-5">
+                           <form method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                               <div class="form-group">
+                                    <select name="pp"   required="required" >
+                                    <option value="" class="form-control p-4">SELECT</option>
+                                        {% for i in objval %}
+                                        <option value="{{ i.ct_id }}">{{ i.category_name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control p-4" placeholder="product  name" required="required"  name="product"/>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control p-4" placeholder="DESCRIPTION" required="required" name="des" />
+                                </div>
+                                 <div class="form-group">
+                                    <input type="file" class="form-control p-4" placeholder="IMAGE" required="required" name="img" />
+                                </div>
+                                 <div class="form-group">
+                                    <input type="text" class="form-control p-4" placeholder="PRIZE" required="required" name="pr" />
+                                </div>
+                                 <div class="form-group">
+                                    <input type="text" class="form-control p-4" placeholder="DELIVERY CHARGE" required="required" name="charge" />
+                                </div>
+                            <div class="form-group">
+                                    <input type="text" class="form-control p-4" placeholder="TOTAL" required="required" name="total" />
+                                </div>
+
+                                <div>
+                                    <button class="btn btn-primary btn-block py-3" type="submit">Add</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</center>
+{% endblock %}

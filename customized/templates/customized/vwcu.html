@@ -1,0 +1,29 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Title</title>#}
+{#</head>#}
+{% extends 'temp/admin.html' %}
+{% block base %}
+<body>
+<table align="center" border="2" width="70%">
+    <tr class="btn-primary" height="50px">
+        <th>USER</th>
+        <th>PRODUCT DETAILS</th>
+        <th>PICTURE</th>
+        <th>RETURN DATE</th>
+    </tr>
+    {% for i in objval %}
+    <tr>
+        <td>{{ i.user.username }}</td>
+        <td>{{ i.product_details }}</td>
+        <td><img src="/static/{{ i.image }}" height="50%" width="50%"></td>
+        <td>{{ i.return_date }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
+{% endblock %}
